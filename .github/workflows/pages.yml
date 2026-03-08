@@ -3,10 +3,10 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches:
-      - main
+      - yawkat-fork
   pull_request:
     branches:
-      - main
+      - yawkat-fork
   workflow_dispatch: {}
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy out/ --project-name=gridfinity-extended
+          command: pages deploy out/ --project-name=gridfinity-extended-fork-yawk-at
 
       - name: Check PR
         uses: 8BitJonny/gh-get-current-pr@4.0.0
